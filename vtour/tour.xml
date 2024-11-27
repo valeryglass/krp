@@ -120,14 +120,12 @@
                x="10" y="50" 
                 />
 
- 	        <!-- Fixed UI Button -->
+ 	        <!-- Fixed UI alert button -->
         <layer name="button2" 
                url="skin2/exclamation.png" 
                x="10" y="150" 
+               onclick="js(alert('Hello from JavaScript!'));"
                 />
-	
-	
-	
 	
 	</scene>
 
