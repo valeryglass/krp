@@ -114,13 +114,13 @@
 		</hotspot>
 
 	
-	        <!-- Fixed Position Buttons -->
+	        <!-- Fixed UI Button -->
         <layer name="button1" 
                url="skin2/interrogation.png" 
                x="10" y="50" 
                 />
 
- 	        <!-- Fixed Position Buttons -->
+ 	        <!-- Fixed UI Button -->
         <layer name="button2" 
                url="skin2/exclamation.png" 
                x="10" y="150" 
