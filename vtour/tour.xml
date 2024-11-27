@@ -1,0 +1,134 @@
+﻿<krpano version="1.22" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="false"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+	
+
+	
+	<scene name="scene_panorama" title="panorama" onstart="" thumburl="panos/panorama.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-437.191" vlookat="13.645" fovtype="MFOV" fov="123.533" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		
+        <!-- hotspots -->
+		<hotspot name="spot1" url="skin2/building.png" style="skin_hotspotstyle" ath="-77.915" atv="33.853" depth="500.0" linkedscene="scene_panorama" linkedscene_lookat="-439.78,17.81,51.7" />	
+		<hotspot name="spot8" url="skin2/biking-mountain.png" style="skin_hotspotstyle" ath="-134.27" atv="23.581" depth="1000.0" linkedscene="scene_panorama" linkedscene_lookat="-502.91,8.94,47.58" />
+		<hotspot name="spot9" url="skin2/house-flood.png" style="skin_hotspotstyle" ath="-16.932" atv="21.442" depth="1000.0" linkedscene="scene_panorama" linkedscene_lookat="-368.37,13.02,26.59" />
+
+        <!-- hotspot polygon -->
+        <hotspot name="polyHotspot" type="poly" html="hello" flying="1" distorted="true" zorder="1" edge="center"
+                fillcolor="0x1CE182"
+                fillalpha="0.3"
+                borderwidth="3.0"
+                bordercolor="0x1CE182"
+                borderalpha="1.0"
+                bordergradient=""
+                borderzoom="0.0"
+                borderwidth3d="false"
+                >
+			<point ath="-88.826" atv="18.479" />
+			<point ath="-86.906" atv="21.167" />
+			<point ath="-84.469" atv="20.882" />
+			<point ath="-83.577" atv="21.57" />
+			<point ath="-81.33" atv="21.182" />
+            <point ath="-80.18" atv="21.897" />
+		    <point ath="-66.387" atv="19.132" />
+            <point ath="-66.481" atv="15.635" />
+            <point ath="-72.356" atv="13.26" />
+            <point ath="-88.517" atv="15.034" />
+
+		</hotspot>
+
+	
+	        <!-- Fixed Position Buttons -->
+        <layer name="button1" 
+               url="skin2/interrogation.png" 
+               x="10" y="50" 
+                />
+
+ 	        <!-- Fixed Position Buttons -->
+        <layer name="button2" 
+               url="skin2/exclamation.png" 
+               x="10" y="150" 
+                />
+	
+	
+	
+	
+	</scene>
+
+</krpano>
