@@ -54,3 +54,6 @@ vtour/temp/
 vtour/*.log
 
 .pre-commit-config.yaml
+
+# Ignore materials its contents
+materials/
