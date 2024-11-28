@@ -71,62 +71,129 @@
 	
 
 	
-	<scene name="scene_panorama" title="panorama" onstart="" thumburl="panos/panorama.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_360_bridge" title="360_bridge" onstart="" thumburl="panos/360_bridge.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="-437.191" vlookat="13.645" fovtype="MFOV" fov="123.533" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-73.469" vlookat="19.208" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/panorama.tiles/preview.jpg" />
+		<preview url="panos/360_bridge.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+			<cube url="panos/360_bridge.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
 		</image>
 
 		
         <!-- hotspots -->
-		<hotspot name="spot1" url="skin2/building.png" style="skin_hotspotstyle" ath="-77.915" atv="33.853" depth="500.0" linkedscene="scene_panorama" linkedscene_lookat="-439.78,17.81,51.7" />	
-		<hotspot name="spot8" url="skin2/biking-mountain.png" style="skin_hotspotstyle" ath="-134.27" atv="23.581" depth="1000.0" linkedscene="scene_panorama" linkedscene_lookat="-502.91,8.94,47.58" />
-		<hotspot name="spot9" url="skin2/house-flood.png" style="skin_hotspotstyle" ath="-16.932" atv="21.442" depth="1000.0" linkedscene="scene_panorama" linkedscene_lookat="-368.37,13.02,26.59" />
+		<hotspot name="spot1" url="skin2/home.png" style="skin_hotspotstyle" ath="-77.915" atv="33.853" depth="5000.0" linkedscene="scene_360_bridge" linkedscene_lookat="-439.78,17.81,51.7" />	
+		<hotspot name="spot8" url="skin2/zoom-in.png" style="skin_hotspotstyle" ath="-134.27" atv="23.581" depth="5000.0" linkedscene="scene_360_bridge" linkedscene_lookat="-502.91,8.94,47.58" />
+		<hotspot name="spot9" url="skin2/zoom-in.png" style="skin_hotspotstyle" ath="-16.932" atv="21.442" depth="5000.0" linkedscene="scene_360_bridge" linkedscene_lookat="-368.37,13.02,26.59" />
 
-        <!-- hotspot polygon -->
-        <hotspot name="polyHotspot" type="poly" html="hello" flying="1" distorted="true" zorder="1" edge="center"
-                fillcolor="0x1CE182"
-                fillalpha="0.3"
-                borderwidth="3.0"
-                bordercolor="0x1CE182"
-                borderalpha="1.0"
-                bordergradient=""
-                borderzoom="0.0"
-                borderwidth3d="false"
-                >
+		<!-- hotspot polygon -->
+		<hotspot name="polyHotspot" type="poly" html="hello" flying="1" distorted="true" zorder="1" edge="center" linkedscene="scene_360_hall" linkedscene_spot="spot3" linkedscene_hoffset="0.0" use3dtransition="true"
+				fillcolor="0x1CE182"
+				fillalpha="0.3"
+				borderwidth="3.0"
+				bordercolor="0x1CE182"
+				borderalpha="1.0"
+				bordergradient=""
+				borderzoom="0.0"
+				borderwidth3d="false"
+				onclick="loadscene(get(linkedscene), null, MERGE);"
+				>
 			<point ath="-88.826" atv="18.479" />
 			<point ath="-86.906" atv="21.167" />
 			<point ath="-84.469" atv="20.882" />
 			<point ath="-83.577" atv="21.57" />
 			<point ath="-81.33" atv="21.182" />
-            <point ath="-80.18" atv="21.897" />
-		    <point ath="-66.387" atv="19.132" />
-            <point ath="-66.481" atv="15.635" />
-            <point ath="-72.356" atv="13.26" />
-            <point ath="-88.517" atv="15.034" />
-
+			<point ath="-80.18" atv="21.897" />
+			<point ath="-66.387" atv="19.132" />
+			<point ath="-66.481" atv="15.635" />
+			<point ath="-72.356" atv="13.26" />
+			<point ath="-88.517" atv="15.034" />
 		</hotspot>
-
 	
 	        <!-- Fixed UI Button -->
         <layer name="button1" 
-               url="skin2/interrogation.png" 
+               url="skin2/layer.png" 
                x="10" y="50" 
+			   width="64" 
+			   height="64"
                 />
 
  	        <!-- Fixed UI alert button -->
         <layer name="button2" 
-               url="skin2/exclamation.png" 
+               url="skin2/mail.png" 
                x="10" y="150" 
-               onclick="js(alert('Hello from JavaScript!'));"
+			   width="64" 
+			   height="64"
+			   onclick="js(alert('Hello from JavaScript!'));"
                 />
-	
 	</scene>
+
+	<scene name="scene_360_hall" title="360_hall" onstart="" thumburl="panos/360_hall.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-92.202" vlookat="11.807" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/360_hall.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/360_hall.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024" />
+		</image>
+
+		<hotspot name="spot1" url="skin2/forward.png" style="skin_hotspotstyle" ath="-134.245" atv="17.527" depth="5000.0" linkedscene="scene_360_kitchen" linkedscene_spot="spot2" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" url="skin2/forward.png" style="skin_hotspotstyle" ath="-92.202" atv="11.683" depth="5000.0" linkedscene="scene_360_bridge" linkedscene_spot="spot3" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_360_kitchen" title="360_kitchen" onstart="" thumburl="panos/360_kitchen.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/360_kitchen.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/360_kitchen.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024" />
+		</image>
+
+		<hotspot name="spot1" url="skin2/forward.png" style="skin_hotspotstyle" ath="-79.295" atv="36.904" depth="5000.0" linkedscene="scene_360_master" linkedscene_spot="spot2" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" url="skin2/forward.png" style="skin_hotspotstyle" ath="2.007" atv="15.5" depth="5000.0" linkedscene="scene_360_hall" linkedscene_spot="spot3" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_360_master" title="360_master" onstart="" thumburl="panos/360_master.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/360_master.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/360_master.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024" />
+		</image>
+
+		<hotspot name="spot1" url="skin2/forward.png" style="skin_hotspotstyle" ath="138.53" atv="15.364" depth="5000.0" linkedscene="scene_360_kitchen" linkedscene_spot="spot2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_city" title="city" onstart="" thumburl="panos/city.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/city.tiles/preview.jpg" />
+
+		<image hfov="1.00" vfov="0.666667" voffset="0.00">
+			<flat url="panos/city.tiles/l%l/%0v/l%l_%0v_%0h.jpg" multires="512,1536x1024,3072x2048,6144x4096" />
+		</image>
+
+	</scene>
+
 
 </krpano>
