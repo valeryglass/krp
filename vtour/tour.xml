@@ -98,7 +98,11 @@
 				borderalpha="1.0"
 				bordergradient=""
 				borderzoom="0.0"
-				borderwidth3d="false"
+				borderwidth3d="false"ftrtryg5u67i890o-]
+
+
+
+				32	qwäer566e6ee6rrrr6êeer6ee6e
 				onclick="loadscene(get(linkedscene), null, MERGE);"
 				>
 			<point ath="-88.826" atv="18.479" />
@@ -124,11 +128,32 @@
  	        <!-- Fixed UI alert button -->
         <layer name="button2" 
                url="skin2/mail.png" 
-               x="10" y="150" 
+               x="10" y="1500" 
 			   width="64" 
 			   height="64"
 			   onclick="js(alert('Hello from JavaScript!'));"
                 />
+
+		<layer name="left_nav_home_i"      
+				style="nav_btn_icons"    
+				url="/plugins/svg.js"    
+				svg_title="home8"
+				/>
+		<style name="nav_btn_icons"           
+				svg_fill="calc: newskin_settings.nav_icon_color"           
+				svg_height="28"           
+				svg_width="28"           
+				svg_viewBox="0 0 28 28"           
+				width="28" 
+				height="28"           
+				align="center" 
+				x="0" 
+				y="0"           
+				visible="true"           
+				enabled="true"           
+				capture="false"           
+				bgcapture="false"    
+				/>
 	</scene>
 
 	<scene name="scene_360_hall" title="360_hall" onstart="" thumburl="panos/360_hall.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
